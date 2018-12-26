@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Toast</string>
+    <string name="Pop_Toast">Pop Toast</string>
+    <string name="Short">Short</string>
+    <string name="Long">Long</string>
+    <string name="Duration">Duration</string>
+    <string name="Content">Content</string>
+    <string name="Enter_Content">Enter the content of toast</string>
+    <string name="Content_Example">This is the Android Toast</string>
+</resources>
