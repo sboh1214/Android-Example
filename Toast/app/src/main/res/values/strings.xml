@@ -7,4 +7,19 @@
     <string name="Content">Content</string>
     <string name="Enter_Content">Enter the content of toast</string>
     <string name="Content_Example">This is the Android Toast</string>
+    <string name="Gravity">Gravity</string>
+    <string name="X_Offset">X Offset</string>
+    <string name="Y_Offset">Y Offset</string>
+    <string name="X_Margin">Horizontal Margin</string>
+    <string name="Y_Margin">Vertical Margin</string>
+    <string-array name="Gravity_List">
+        <item>NO_GRAVITY</item>
+        <item>CENTER</item>
+        <item>TOP</item>
+        <item>BOTTOM</item>
+        <item>LEFT</item>
+        <item>RIGHT</item>
+        <item>START</item>
+        <item>END</item>
+    </string-array>
 </resources>

@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity" android:layout_margin="16dp">
 
     <Button
             android:text="@string/Pop_Toast"
@@ -13,8 +13,6 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
             android:id="@+id/PopToastButton"
             android:onClick="onPopToastButtonClicked"/>
     <TextView
@@ -22,23 +20,65 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"
-            android:id="@+id/DurationText" tools:layout_editor_absoluteY="171dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/ContentEdit"
+            android:id="@+id/DurationText" android:layout_marginTop="16dp"/>
+    <TextView
+            android:text="@string/Gravity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/GravityText" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/RadioGroup"/>
+    <TextView
+            android:text="@string/X_Offset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/XoffsetText"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/GravitySpinner"
+            app:layout_constraintEnd_toStartOf="@+id/YoffsetText"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <TextView
+            android:text="@string/X_Margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/XmarginText"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/XoffsetEdit"
+    />
+    <TextView
+            android:text="@string/Y_Margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/YmarginText"
+            app:layout_constraintStart_toEndOf="@+id/XmarginText" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/YoffsetEdit"/>
+    <TextView
+            android:text="@string/Y_Offset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/YoffsetText"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/GravitySpinner"
+            app:layout_constraintStart_toStartOf="@+id/YoffsetEdit" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
     <TextView
             android:text="@string/Content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"
             android:id="@+id/ContentText"
             android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/PopToastButton"/>
     <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/DurationText" android:layout_marginEnd="16dp">
+            app:layout_constraintTop_toBottomOf="@+id/DurationText"
+            android:id="@+id/RadioGroup">
         <RadioButton
                 android:text="@string/Short"
                 android:layout_width="wrap_content"
@@ -55,11 +95,50 @@
             android:inputType="text"
             android:ems="10"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"
             android:id="@+id/ContentEdit"
             app:layout_constraintTop_toBottomOf="@+id/ContentText"
             android:text="@string/Content_Example"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"
     />
+    <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/GravitySpinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GravityText" android:entries="@array/Gravity_List"/>
+    <EditText
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/XoffsetEdit"
+            app:layout_constraintTop_toBottomOf="@+id/XoffsetText" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/YoffsetEdit" android:layout_width="0dp" android:text="0"/>
+    <EditText
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/YoffsetEdit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/YoffsetText"
+            app:layout_constraintStart_toEndOf="@id/XoffsetEdit" android:layout_width="0dp"
+            android:text="0"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/YmarginEdit"
+            app:layout_constraintTop_toBottomOf="@+id/YmarginText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/XmarginEdit"
+            android:text="0"/>
+    <EditText
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/XmarginEdit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/XmarginText"
+            app:layout_constraintEnd_toStartOf="@+id/YmarginEdit"
+            android:layout_width="0dp" android:text="0"/>
 </android.support.constraint.ConstraintLayout>
