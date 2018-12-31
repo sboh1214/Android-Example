@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SnackBar</string>
+    <string name="Pop_Snackbar">Pop Snack Bar</string>
+    <string name="Content_Example">This is Android Snack Bar</string>
+    <string name="Duration">Duration</string>
+    <string name="Short">Short</string>
+    <string name="Long">Long</string>
+    <string name="Content">Content</string>
+    <string name="Dismiss">Dismiss</string>
 </resources>

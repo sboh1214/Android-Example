@@ -5,15 +5,62 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-    <TextView
+        tools:context=".MainActivity" android:layout_margin="16dp">
+    <Button
+            android:text="@string/Pop_Snackbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/PopSnackbarButton"
+            android:onClick="onPopSnackbarButtonClicked"/>
+    <TextView
+            android:text="@string/Content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/ContentText"
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/PopSnackbarButton"/>
+    <TextView
+            android:text="@string/Duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ContentEdit"
+            android:id="@+id/DurationText" android:layout_marginTop="16dp"/>
+    <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DurationText"
+            android:id="@+id/RadioGroup">
+        <RadioButton
+                android:text="@string/Short"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/ShortRadio" android:layout_weight="1"
+                android:checked="true"/>
+        <RadioButton
+                android:text="@string/Long"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/LongRadio" android:layout_weight="1"/>
+    </RadioGroup>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/ContentEdit"
+            app:layout_constraintTop_toBottomOf="@+id/ContentText"
+            android:text="@string/Content_Example"
+            app:layout_constraintEnd_toEndOf="parent"
+    />
+    <Button
+            android:text="@string/Dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/DismissButton" app:layout_constraintStart_toEndOf="@+id/PopSnackbarButton"
+            android:layout_marginStart="16dp" android:onClick="onDismissButtonClicked"/>
 </android.support.constraint.ConstraintLayout>
