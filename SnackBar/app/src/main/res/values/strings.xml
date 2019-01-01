@@ -7,4 +7,8 @@
     <string name="Long">Long</string>
     <string name="Content">Content</string>
     <string name="Dismiss">Dismiss</string>
+    <string name="Indefinite">Indefinite</string>
+    <string name="Action">Action</string>
+    <string name="On">On</string>
+    <string name="Off">Off</string>
 </resources>
