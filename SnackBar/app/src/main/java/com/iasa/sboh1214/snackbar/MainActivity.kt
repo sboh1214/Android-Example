@@ -1,6 +1,5 @@
 package com.iasa.sboh1214.snackbar
 
-import android.drm.DrmStore
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -9,6 +8,8 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    var snackbar:Snackbar?=null
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -32,41 +33,30 @@ class MainActivity : AppCompatActivity() {
     fun onPopSnackbarButtonClicked(view: View)
     {
         val content:String = ContentEdit.text.toString()
-        val snackbar:Snackbar?
 
         //set Snackbar's content and length
-        if (ShortRadio.isChecked)
+        snackbar = Snackbar.make(view,content,when(RadioGroup.checkedRadioButtonId)
         {
-            snackbar = Snackbar.make(view,content,Snackbar.LENGTH_SHORT)
-        }
-        else if (LongRadio.isChecked)
-        {
-            snackbar = Snackbar.make(view,content,Snackbar.LENGTH_LONG)
-        }
-        else if (IndefiniteRadio.isChecked)
-        {
-            snackbar = Snackbar.make(view,content,Snackbar.LENGTH_INDEFINITE)
-        }
-        else
-        {
-            snackbar = Snackbar.make(view,"Error",Snackbar.LENGTH_SHORT)
-        }
+            ShortRadio.id -> Snackbar.LENGTH_SHORT
+            LongRadio.id -> Snackbar.LENGTH_LONG
+            IndefiniteRadio.id -> Snackbar.LENGTH_INDEFINITE
+            else -> Snackbar.LENGTH_SHORT
+        })
 
         //set Snackbar's action
         val actionContent:String = ActionContentEdit.text.toString()
         if (ActionSwitch.isChecked)
         {
-            snackbar.setAction(actionContent,View.OnClickListener
-            {
+            snackbar?.setAction(actionContent) {
                 Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
-            })
+            }
         }
 
-        snackbar.show()
+        snackbar?.show()
     }
 
     fun onDismissButtonClicked(view: View)
     {
-
+        snackbar?.dismiss()
     }
 }
