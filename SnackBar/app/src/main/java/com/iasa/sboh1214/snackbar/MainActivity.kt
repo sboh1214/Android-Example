@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+@Suppress("UNUSED_PARAMETER")
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,12 +18,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         ActionSwitch.setOnCheckedChangeListener{ _, isChecked ->
-            ActionSwitchText.text = when (ActionSwitch.isChecked)
+            ActionSwitchText.text = when (isChecked)
             {
                 true -> getString(R.string.On)
                 false -> getString(R.string.Off)
             }
-            ActionContentEdit.isEnabled = when (ActionSwitch.isChecked)
+            ActionContentEdit.isEnabled = when (isChecked)
             {
                 true -> true
                 false -> false
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun onPopSnackbarButtonClicked(view: View)
+    fun onPopSnackbarButtonClicked(view:View)
     {
         val content:String = ContentEdit.text.toString()
 
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         snackbar?.show()
     }
 
-    fun onDismissButtonClicked(view: View)
+    fun onDismissButtonClicked(view:View)
     {
         snackbar?.dismiss()
     }
