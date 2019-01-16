@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Notification</string>
+    <string name="Content_Example">This is Android Notification</string>
+    <string name="Content">Content</string>
 </resources>
