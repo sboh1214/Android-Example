@@ -1,4 +1,4 @@
-package com.iasa.sboh1214.notification
+package com.sboh1214.Notification
 
 import org.junit.Test
 
